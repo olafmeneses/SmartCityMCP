@@ -1,3 +1,11 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "httpx==0.28.1",
+#     "mcp==1.21.0",
+#     "pydantic==2.12.4",
+# ]
+# ///
 """
 Valencia Smart City MCP Server
 

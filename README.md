@@ -1,6 +1,6 @@
 # Valencia Smart City MCP Server
 
-MCP server providing real-time traffic, bike-sharing, air quality and weather data from Valencia, Spain for Claude and other LLMs.
+MCP server providing real-time traffic, bike-sharing, air quality and weather data from Valencia (Spain) for LLMs.
 
 ## Features
 
@@ -39,11 +39,29 @@ This shared conversation demonstrates how Claude can access and analyze real-tim
 
 ```bash
 # Clone the repository
-git clone https://github.com/sosanzma/SmartCityMCP.git
+git clone https://github.com/olafmeneses/SmartCityMCP.git
 cd SmartCityMCP
+```
 
+### Option 1: Using uv (Recommended)
+
+The script uses inline dependency specification, so uv will automatically manage the environment and dependencies:
+
+```bash
+# Run the server (uv handles everything automatically)
+uv run valencia_smart_city_mcp.py
+```
+
+### Option 2: Traditional pip installation
+
+For users who prefer traditional Python environments:
+
+```bash
 # Install dependencies
 pip install -r requirements.txt
+
+# Run the server
+python valencia_smart_city_mcp.py
 ```
 
 ## Tools
@@ -139,7 +157,7 @@ Add this to your `claude_desktop_config.json` (typically found in `%APPDATA%\Cla
   "mcpServers": {
     "valenciaSmartCity": {
       "command": "uv",
-      "args": ["run", "valencia_traffic_mcp.py"]
+      "args": ["run", "valencia_smart_city_mcp.py"]
     }
   }
 }
@@ -148,7 +166,7 @@ Add this to your `claude_desktop_config.json` (typically found in `%APPDATA%\Cla
 Alternatively, install directly with:
 
 ```bash
-mcp install valencia_traffic_mcp.py --name "Valencia Smart City"
+mcp install valencia_smart_city_mcp.py --name "Valencia Smart City"
 ```
 
 ## Development
@@ -157,10 +175,10 @@ Run the server directly:
 
 ```bash
 # Run with MCP Inspector for development
-mcp dev valencia_traffic_mcp.py
+mcp dev valencia_smart_city_mcp.py
 
 # Run directly (stdio transport)
-python valencia_traffic_mcp.py
+python valencia_smart_city_mcp.py
 ```
 
 ## Example Queries
